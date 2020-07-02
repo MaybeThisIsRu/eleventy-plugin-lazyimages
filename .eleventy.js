@@ -82,6 +82,7 @@ const getImageData = async (imageSrc) => {
   imageData = {
     width: image.bitmap.width,
     height: image.bitmap.height,
+    src: imageSrc // does not change
   };
 
   logMessage(`finished processing ${imageSrc}`);
@@ -107,7 +108,6 @@ const processImage = async (imgElem) => {
   }
 
   if (!imgElem.getAttribute('loading')) imgElem.setAttribute('loading', 'lazy');
-  imgElem.setAttribute('src', imgElem.src)
 
   if (!supportedExtensions.includes(fileExt.toLowerCase())) {
     logMessage(`${fileExt} placeholder not supported: ${imgPath}`);
@@ -122,6 +122,7 @@ const processImage = async (imgElem) => {
 
     imgElem.setAttribute('width', image.width);
     imgElem.setAttribute('height', image.height);
+    imgElem.setAttribute('src', image.src);
   } catch (e) {
     console.error('LazyImages', imgPath, e);
   }
