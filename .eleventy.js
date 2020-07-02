@@ -70,10 +70,7 @@ const updateCache = (imageSrc, imageData) => {
 
 const getImageData = async (imageSrc) => {
   let imageData = readCache(imageSrc);
-
-  if (imageData) {
-    return imageData;
-  }
+  if (imageData) return imageData;
 
   logMessage(`started processing ${imageSrc}`);
 
@@ -82,7 +79,6 @@ const getImageData = async (imageSrc) => {
   imageData = {
     width: image.bitmap.width,
     height: image.bitmap.height,
-    src: imageSrc // does not change
   };
 
   logMessage(`finished processing ${imageSrc}`);
@@ -122,7 +118,6 @@ const processImage = async (imgElem) => {
 
     imgElem.setAttribute('width', image.width);
     imgElem.setAttribute('height', image.height);
-    imgElem.setAttribute('src', image.src);
   } catch (e) {
     console.error('LazyImages', imgPath, e);
   }
