@@ -107,7 +107,7 @@ const processImage = async (imgElem, options) => {
 
   if (!imgElem.getAttribute('loading')) imgElem.setAttribute('loading', 'lazy');
 
-  if (!supportedExtensions.includes(fileExt.toLowerCase())) {
+  if (fileExt && !supportedExtensions.includes(fileExt.toLowerCase())) {
     logMessage(`${fileExt} placeholder not supported: ${imgPath}`);
     return;
   }
