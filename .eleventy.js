@@ -116,8 +116,6 @@ const processImage = async (imgElem, options) => {
   try {
     const image = await getImageData(imgPath);
 
-    imgElem.setAttribute('src', imgElem.src);
-
     // Don't set width/height for vector images
     if (fileExt === 'svg') {
       return;
