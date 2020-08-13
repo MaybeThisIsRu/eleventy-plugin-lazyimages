@@ -63,6 +63,8 @@ const readImage = async (imageSrc) => {
 
 // Gets the image width+height+LQIP from the cache, or generates them if not found
 const getImageData = async (imageSrc) => {
+  const { cacheFile } = lazyImagesConfig;
+
   let imageData = cache.read(imageSrc);
 
   if (imageData) {
