@@ -28,36 +28,6 @@ exports.logMessage = (message) => {
   console.log(`LazyImages - ${message}`);
 };
 
-// Init script for the plugin that gets injected into the final markup
-// (we have to use lowest common denominator JS language features
-// because we don't know what the target browser support is)
-exports.initScript = function (selector, src, preferNativeLazyLoad) {
-  var images = document.querySelectorAll(selector);
-  var numImages = images.length;
-
-  if (numImages > 0) {
-    if (preferNativeLazyLoad && 'loading' in HTMLImageElement.prototype) {
-      for (var i = 0; i < numImages; i++) {
-        var keys = ['src', 'srcset'];
-
-        for (var j = 0; j < keys.length; j++) {
-          if (images[i].hasAttribute('data-' + keys[j])) {
-            var value = images[i].getAttribute('data-' + keys[j]);
-            images[i].setAttribute(keys[j], value);
-          }
-        }
-      }
-
-      return;
-    }
-
-    var script = document.createElement('script');
-    script.async = true;
-    script.src = src;
-    document.body.appendChild(script);
-  }
-};
-
 // Warns about common issues with custom configs
 exports.checkConfig = (config, defaultConfig) => {
   const { appendInitScript, className } = config;

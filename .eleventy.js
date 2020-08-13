@@ -28,7 +28,6 @@ const defaultLazyImagesConfig = {
   imgSelector: 'img',
   transformImgPath,
   cacheFile: '.lazyimages.json',
-  preferNativeLazyLoad: true,
 };
 
 // A global to store the current config (saves us passing it around functions)
