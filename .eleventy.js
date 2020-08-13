@@ -112,9 +112,6 @@ const processImage = async (imgElem, options) => {
     return;
   }
 
-  // External links only lazily loaded. Can't process other attributes like width and height. Use external images sparingly on your site as it might cause jankiness.
-  if (imgPath.match(/^http[s]?:\/\//i)) return;
-
   try {
     const image = await getImageData(imgPath);
 
