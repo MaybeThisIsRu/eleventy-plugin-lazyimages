@@ -90,15 +90,9 @@ and some common questions are covered at the end of this file.
 
 | Key                    | Type     | Description                                                                                                                                                                   |
 | ---------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `maxPlaceholderWidth`  | Integer  | The maximum width in pixels of the generated placeholder image. Recommended values are between 15 and 40.<br>Default: `25`                                                    |
-| `maxPlaceholderHeight` | Integer  | The maximum height in pixels of the generated placeholder image. Recommended values are between 15 and 40.<br>Default: `25`                                                   |
 | `imgSelector`          | String   | The DOM selector used to find IMG elements in the markup.<br>Default: `img`                                                                                                   |
 | `transformImgPath`     | Function | A function that takes the IMG `src` attribute and returns a string representing the actual file path to your image.                                                           |
 | `cacheFile`            | String   | Cache image metadata and placeholder images to this filename. Greatly speeds up subsequent builds. Pass an empty string to turn off the cache.<br>Default: `.lazyimages.json` |
-| `appendInitScript`     | Boolean  | Appends code to initialise lazy loading of images to the generated markup. Set this to `false` if you include your own lazy load script.<br>Default: `true`                   |
-| `scriptSrc`            | String   | The URI for the lazy load script that is injected into the markup via `appendInitScript`.<br>Default: `https://cdn.jsdelivr.net/npm/lazysizes@5/lazysizes.min.js`             |
-| `preferNativeLazyLoad` | Boolean  | Use the native browser `loading="lazy"` instead of the lazy load script (if available).<br>Default: `false`                                                                   |
-| `className`            | String[] | The class names added to found IMG elements. You usually don't need to change this unless you're using a different `scriptSrc`.<br>Default: `['lazyload']`                    |
 
 ## Example projects
 
