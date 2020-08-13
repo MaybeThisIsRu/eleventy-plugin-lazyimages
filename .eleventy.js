@@ -8,7 +8,6 @@ const cache = require('./cache');
 const {
   transformImgPath,
   logMessage,
-  initScript,
   checkConfig,
 } = require('./helpers');
 
